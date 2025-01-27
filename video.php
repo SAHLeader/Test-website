@@ -10,12 +10,12 @@ if (!$video_id) {
 // رابط الفيديو الرئيسي
 $video_url = "https://www.eporner.com/embed/" . $video_id . "/";
 
-// للحصول على عنوان الفيديو ومقترحات الفيديوهات (محاكاة API)
+// للحصول على مقترحات الفيديوهات (اختيار صفحة عشوائية)
 $api_url = 'https://www.eporner.com/api/v2/video/search/';
 $params = array(
     'query' => 'trending',
     'per_page' => 6,
-    'page' => 1
+    'page' => rand(1, 10) // اختيار صفحة عشوائية بين 1 و 100
 );
 $api_full_url = $api_url . '?' . http_build_query($params);
 
